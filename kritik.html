@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Tuku Kopi</title>
+    <style>
+        .wrap{
+            background-image: url(assets/img/kopi.jpg);
+            background-size: cover;
+            height: 100vh;
+            background-repeat: no-repeat;
+            width: 100%;
+        }
+        .wrap .container{
+            height: 100vh;
+        }
+        @media screen and (max-width:720px){
+            .wrap .container{
+                 height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="sidebar">
+                <div class="menu">
+                    <div class="menu-toggle">
+                        <input type="checkbox"/>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="list-menu">
+                    <a href="index.html">Home</a>
+                    <a href="menu.html">Daftar Menu</a>
+                    <a href="tentang.html">Tentang Kami</a>
+                    <a href="kritik.html">Kritik & Saran</a>
+                </div>
+            </div>
+            <!-- Akhir Sidebar -->
+
+            <div class="kritik">
+                <h1>Kritik & Saran</h1><br><br>
+                <p>
+                    Karena kedai kopi <span>TUKU KOPI</span> ini masih baru jadi kami juga perlu kritik dan saran dari para customer, agar kami juga bisa meningkatkan pelayanan yang maksimal kepada para pelanggan kami kedepannya. Silahkan beri kritik atau saran dengan cara mengisi form dibawah ini
+                </p>
+                <div class="komentar">
+                    <form action="kritik.html" method="GET">
+                        <label>Kritik & saran</label><br>
+                        <textarea name="alamat" cols="40" rows="8" class="form-control" placeholder="Komentar..."></textarea><br>
+                        <input type="submit" class="btn-submit" value="Kirim">
+                    </form>
+                  </div>
+            </div>
+        </div><!--./Container -->
+    </div><!--./Wrap-->
+
+
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

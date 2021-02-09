@@ -1,0 +1,348 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: 'Roboto-reguler';
+    src: url(fonts/Roboto-Regular.ttf);
+}
+@font-face{
+    font-family: 'Roboto-thin';
+    src: url(fonts/Roboto-Thin.ttf);
+}
+@font-face{
+    font-family: 'Hanalei-reguler';
+    src: url(fonts/Hanalei-Regular.ttf);
+}
+@font-face{
+    font-family: 'ArchitectsDaughter-Regular';
+    src: url(fonts/ArchitectsDaughter-Regular.ttf);
+}
+/* Halaman Index */
+.wrapper .container,
+.wrap .container{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+.wrap .container{
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: linear-gradient(to top,rgba(0,0,0,0.9),rgba(0,0,0,0.3));
+}
+.wrapper .container h1{
+    font-family: 'Hanalei-reguler';
+    font-size: 80px;
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.3);
+}
+.wrapper .container p{
+    font-family: 'Roboto-thin';
+    font-size: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.wrapper .container span{
+    font-weight: bold;
+}
+.wrapper .container a{
+    text-decoration: none;
+    padding: 10px 30px;
+    font-size: 15px;
+    background-color: rgb(172, 73, 8);
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Roboto-thin';
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+    border-radius: 1px;
+}
+.wrapper::after{
+    content: "";
+    background-image: linear-gradient(to top,rgba(0,0,0,0.9),rgba(0,0,0,0.5));
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+
+/* Halaman Menu */
+/* menu toggle */
+.menu{
+    margin: 20px;
+}
+.menu-toggle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+    position: relative;
+    z-index: 1;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    left: -15px;
+    top: -8px;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+}
+.menu-toggle span{
+    display: block;
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: all 0.5s;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+/* Animasi humbergur button*/
+.menu-toggle span:nth-child(2){
+    /* Untuk merubah poros ketika elemen diputar */
+    transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+/* CSS sibiling ketika input di cek cari saudara nya di span */
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(38deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-38deg) translate(-1px,0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* Halaman menu */
+.daftar-menu h1{
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+.list-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    transition: 0.2s;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.list-menu.slide{
+    opacity: 1;
+    transform: translateX(0);
+    transition: 0.5s;
+}
+.list-menu a{
+    font-family: 'Roboto-reguler';
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.9);
+    color: #fff;
+    padding: 5px 20px;
+    margin: 3px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.daftar-menu,.about,.kritik{
+    margin: 0 20px 20px;
+}
+
+.daftar-menu .isi-daftar-menu table th{
+    text-align: start;
+    padding: 10px;
+    font-size: 18px;
+}
+.daftar-menu .isi-daftar-menu table td{
+    padding: 10px;
+    font-family: 'ArchitectsDaughter-Regular';
+    font-weight: 200;
+}
+
+.isi-daftar-menu{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+.menu1{
+    margin: 20px 0;
+    background-color: rgba(0,0,0,0.7);
+    padding: 10px;
+    width: 100%;
+}
+
+/* Halaman Tentang */
+.wrap .container .about{
+    flex: 10%;
+    font-family: 'Roboto-thin';
+    padding: 20px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+.wrap .container .about p{
+    line-height: 30px;
+    font-size: 15px;
+    text-align: justify;
+}
+.wrap .container .about span{
+    font-weight: bold;
+}
+
+
+/* Halaman Kritik & Saran */
+.komentar{
+    width: auto;
+    height: auto;
+    padding: 10px 0;
+    box-sizing: border-box;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.komentar .form-control{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin:10px 0 20px;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+    font-size: 12pt;
+    background-color: white;
+}
+.komentar .form-control:focus{
+    outline: none;
+}
+.komentar label{
+    font-size: 13px;
+}
+.btn-submit{
+    padding: 10px 20px;
+    background-color: rgb(33, 88, 252);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+.btn-submit:hover{
+    background-color: rgb(16, 66, 214);
+}
+
+.kritik p,.kritik h1{
+    font-family: 'Roboto-thin';
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+
+
+@media screen and (min-width:920px){
+    /* Halaman index */
+    .wrapper .container h1{
+        font-size: 150px;
+        width: 700px;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #7E2EA0;
+        animation: typing 3s steps(12, end), cursor .2s steps(12, end) 1 forwards;
+    }
+    .wrapper .container p{
+        font-size: 30px;
+    }
+    .wrapper .container a{
+        font-size: 20px;
+    }
+
+    /* Halaman Menu */
+    .wrap .container{
+        flex-direction: row;
+    }
+    .sidebar{
+        flex: 15%;
+    }
+    .daftar-menu,.about{
+        flex: 85%;
+    }
+    .menu{
+        margin: 50px;
+        margin-bottom: 10px;
+    }
+    .menu1{
+        width: auto;
+        margin: 20px;
+    }
+    .list-menu{
+        margin-left: 45px;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: 0.5s;
+    }
+    .list-menu.slide{
+        transform: translateX(0);
+        opacity: 1;
+        transition: 0.5s;
+    }
+    .list-menu a{
+        margin:3px 5px;
+        padding: 5px 20px;
+    }
+    .daftar-menu,.about,.kritik{
+        margin: 30px 20px 20px;
+    }
+    .daftar-menu h1{
+        font-size: 50px;
+    }
+    .isi-daftar-menu{
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+
+    /* Halaman Tentang */
+    .wrap .container .about p{
+        line-height: 30px;
+        font-size: 20px;
+    }
+
+   /* Halaman Kritik */
+   .komentar{
+       width: 500px;
+       margin-left: -50px;
+   }
+   .kritik{
+        width: 500px;
+        position: absolute;
+        left: 15%;
+    }
+    .kritik p{
+        line-height: 25px;
+    }
+}
+
+@keyframes typing {
+    from { width: 0 }
+}
+@keyframes cursor {
+    50% { border-color: transparent }
+    100%{border-color: transparent;}
+}
